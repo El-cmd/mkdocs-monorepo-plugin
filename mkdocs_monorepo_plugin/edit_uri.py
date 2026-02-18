@@ -97,7 +97,9 @@ class EditUrl:
             abs_root_config_file_dir, root_config_docs_dir
         )
 
-        return path.realpath(abs_root_config_docs_dir) in self.page.file.abs_src_path
+        return path.realpath(abs_root_config_docs_dir) in path.realpath(
+            self.page.file.abs_src_path
+        )
 
     def build(self):
         if self.__is_root():
